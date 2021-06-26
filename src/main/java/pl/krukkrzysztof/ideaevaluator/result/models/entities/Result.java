@@ -24,6 +24,7 @@ public class Result {
 	@GeneratedValue
 	private Long id;
 	private String path;
+	private String buttonName;
 	private Integer clicks;
 	@ManyToOne
 	private Iteration iteration;

@@ -1,5 +1,6 @@
 package pl.krukkrzysztof.ideaevaluator.iteration.models.entities; 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Entity;
@@ -32,6 +33,6 @@ public class Iteration {
 	private String notes;
 	private String idea;
 	private Integer visitsTotal;
-	@OneToMany(mappedBy = "iteration")
+	@OneToMany(mappedBy = "iteration", cascade = CascadeType.ALL)
 	private List<Result> results;
 }

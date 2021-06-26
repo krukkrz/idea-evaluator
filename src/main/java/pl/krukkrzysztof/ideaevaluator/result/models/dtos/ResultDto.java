@@ -13,6 +13,7 @@ public class ResultDto {
 
     private Long id;
     private String path;
+    private String buttonName;
     private Integer clicks;
     private Long iteration;
 }

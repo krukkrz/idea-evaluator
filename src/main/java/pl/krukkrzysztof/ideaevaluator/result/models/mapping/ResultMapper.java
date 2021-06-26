@@ -13,6 +13,7 @@ public class ResultMapper {
 		return Result.builder()
 				.id(result.getId())
 				.path(result.getPath())
+				.buttonName(result.getButtonName())
 				.clicks(result.getClicks())
 				.iteration(
 						Iteration.builder()
@@ -26,6 +27,7 @@ public class ResultMapper {
 		return ResultDto.builder()
 				.id(result.getId())
 				.path(result.getPath())
+				.buttonName(result.getButtonName())
 				.clicks(result.getClicks())
 				.iteration(result.getIteration().getId())
 				.build();
