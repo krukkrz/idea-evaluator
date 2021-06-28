@@ -1,4 +1,4 @@
-package pl.krukkrzysztof.ideaevaluator.result.services; 
+package pl.krukkrzysztof.ideaevaluator.result.services;
 
 import org.springframework.transaction.annotation.Transactional;
 import pl.krukkrzysztof.ideaevaluator.result.repositories.ResultRepository;
@@ -9,10 +9,11 @@ import lombok.AllArgsConstructor;
 import javax.persistence.EntityNotFoundException;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
-public class ResultService { 
+public class ResultService {
 
 	private final ResultRepository repository;
 
@@ -31,6 +32,7 @@ public class ResultService {
 
 	@Transactional
 	public Result edit(Result result) {
+		repository.findById(result.getId()).orElseThrow(EntityNotFoundException::new);
 		return repository.save(result);
 	}
 

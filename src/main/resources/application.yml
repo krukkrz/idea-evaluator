@@ -11,3 +11,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create-drop
+
+basicAuth:
+  username: user
+  password: pass
