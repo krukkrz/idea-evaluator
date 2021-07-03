@@ -16,7 +16,6 @@ import pl.krukkrzysztof.ideaevaluator.iteration.models.entities.Iteration;
 import pl.krukkrzysztof.ideaevaluator.iteration.models.mapping.IterationMapper;
 import pl.krukkrzysztof.ideaevaluator.iteration.services.IterationService;
 
-import javax.annotation.security.RolesAllowed;
 import java.util.List;
 import java.util.stream.Collectors;
 
