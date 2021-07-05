@@ -4,6 +4,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import lombok.Builder;
@@ -11,6 +12,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import pl.krukkrzysztof.ideaevaluator.idea.models.entities.Idea;
 import pl.krukkrzysztof.ideaevaluator.result.models.entities.Result;
 
 import java.time.LocalDate;
@@ -33,4 +35,6 @@ public class Iteration {
 	private Integer visitsTotal;
 	@OneToMany(mappedBy = "iteration", cascade = CascadeType.ALL)
 	private List<Result> results;
+	@ManyToOne
+	private Idea idea;
 }

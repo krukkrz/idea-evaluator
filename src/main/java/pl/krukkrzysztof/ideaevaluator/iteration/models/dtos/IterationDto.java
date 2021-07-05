@@ -1,5 +1,6 @@
 package pl.krukkrzysztof.ideaevaluator.iteration.models.dtos; 
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,6 +15,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class IterationDto {
 
     private Long id;
@@ -22,4 +24,5 @@ public class IterationDto {
     private String domain;
     private Integer visitsTotal;
     private List<ResultDto> results;
+    private Long idea;
 }
