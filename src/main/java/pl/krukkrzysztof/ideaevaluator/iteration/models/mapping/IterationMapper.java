@@ -38,6 +38,7 @@ public class IterationMapper {
                 .endDate(iteration.getEndDate())
                 .visitsTotal(iteration.getVisitsTotal())
                 .results(mapResultsToDtos(iteration))
+                .idea(iteration.getIdea().getId())
                 .build();
     }
 
