@@ -19,8 +19,6 @@ public class IterationMapper {
 				.domain(iteration.getDomain())
 				.startDate(iteration.getStartDate())
 				.endDate(iteration.getEndDate())
-				.idea(iteration.getIdea())
-				.notes(iteration.getNotes())
 				.visitsTotal(iteration.getVisitsTotal())
 				.results(mapResultDtoListToModels(iteration))
 				.build();
@@ -32,8 +30,6 @@ public class IterationMapper {
 				.domain(iteration.getDomain())
 				.startDate(iteration.getStartDate())
 				.endDate(iteration.getEndDate())
-				.idea(iteration.getIdea())
-				.notes(iteration.getNotes())
 				.visitsTotal(iteration.getVisitsTotal())
 				.results(mapResultsToDtos(iteration))
 				.build();

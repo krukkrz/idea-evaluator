@@ -1,4 +1,4 @@
-package pl.krukkrzysztof.ideaevaluator.iteration.models.entities; 
+package pl.krukkrzysztof.ideaevaluator.idea.models.entities; 
 
 import javax.persistence.CascadeType;
 import javax.persistence.Id;
@@ -11,9 +11,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import pl.krukkrzysztof.ideaevaluator.result.models.entities.Result;
+import pl.krukkrzysztof.ideaevaluator.iteration.models.entities.Iteration;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -22,15 +21,13 @@ import java.util.List;
 @EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor
-public class Iteration { 
+public class Idea { 
 
 	@Id
 	@GeneratedValue
 	private Long id;
-	private LocalDate startDate;
-	private LocalDate endDate;
-	private String domain;
-	private Integer visitsTotal;
-	@OneToMany(mappedBy = "iteration", cascade = CascadeType.ALL)
-	private List<Result> results;
+	private String notes;
+	private String description;
+	@OneToMany(mappedBy = "idea", cascade = CascadeType.ALL)
+	private List<Iteration> iterations;
 }

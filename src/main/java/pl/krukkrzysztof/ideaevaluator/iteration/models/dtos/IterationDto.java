@@ -20,8 +20,6 @@ public class IterationDto {
     private LocalDate startDate;
     private LocalDate endDate;
     private String domain;
-    private String notes;
-    private String idea;
     private Integer visitsTotal;
     private List<ResultDto> results;
 }

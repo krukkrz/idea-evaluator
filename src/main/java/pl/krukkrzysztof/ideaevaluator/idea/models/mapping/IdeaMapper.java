@@ -1,0 +1,52 @@
+package pl.krukkrzysztof.ideaevaluator.idea.models.mapping;
+
+import org.springframework.stereotype.Component;
+import pl.krukkrzysztof.ideaevaluator.idea.models.dtos.IdeaDto;
+import pl.krukkrzysztof.ideaevaluator.idea.models.entities.Idea;
+import pl.krukkrzysztof.ideaevaluator.iteration.models.dtos.IterationDto;
+import pl.krukkrzysztof.ideaevaluator.iteration.models.entities.Iteration;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Component
+public class IdeaMapper {
+
+    public static Idea toModel(IdeaDto idea) {
+        return Idea.builder()
+                .id(idea.getId())
+                .description(idea.getDescription())
+                .notes(idea.getNotes())
+				.iterations(mapIterationDtosToEntity(idea.getIterations()))
+                .build();
+    }
+
+    public static IdeaDto toDto(Idea idea) {
+        return IdeaDto.builder()
+                .id(idea.getId())
+                .description(idea.getDescription())
+                .notes(idea.getNotes())
+				.iterations(mapIterationsToDtos(idea.getIterations()))
+                .build();
+    }
+
+    public static List<IterationDto> mapIterationsToDtos(List<Iteration> iterations) {
+        return iterations.stream().map(
+                iteration -> IterationDto.builder()
+                        .id(iteration.getId())
+                        .startDate(iteration.getStartDate())
+                        .endDate(iteration.getEndDate())
+                        .build()
+        ).collect(Collectors.toList());
+    }
+
+	public static List<Iteration> mapIterationDtosToEntity(List<IterationDto> iterations) {
+		return iterations.stream().map(
+				iteration -> Iteration.builder()
+						.id(iteration.getId())
+						.startDate(iteration.getStartDate())
+						.endDate(iteration.getEndDate())
+						.build()
+		).collect(Collectors.toList());
+	}
+}
