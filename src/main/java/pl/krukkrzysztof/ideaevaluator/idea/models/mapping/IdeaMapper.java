@@ -15,6 +15,7 @@ public class IdeaMapper {
     public static Idea toModel(IdeaDto idea) {
         return Idea.builder()
                 .id(idea.getId())
+				.name(idea.getName())
                 .description(idea.getDescription())
                 .notes(idea.getNotes())
 				.iterations(mapIterationDtosToEntity(idea.getIterations()))
@@ -24,7 +25,8 @@ public class IdeaMapper {
     public static IdeaDto toDto(Idea idea) {
         return IdeaDto.builder()
                 .id(idea.getId())
-                .description(idea.getDescription())
+				.name(idea.getName())
+				.description(idea.getDescription())
                 .notes(idea.getNotes())
 				.iterations(mapIterationsToDtos(idea.getIterations()))
                 .build();
