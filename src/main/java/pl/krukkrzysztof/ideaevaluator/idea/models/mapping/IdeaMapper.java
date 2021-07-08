@@ -38,6 +38,7 @@ public class IdeaMapper {
                         .id(iteration.getId())
                         .startDate(iteration.getStartDate())
                         .endDate(iteration.getEndDate())
+						.domain(iteration.getDomain())
                         .build()
         ).collect(Collectors.toList());
     }
@@ -48,6 +49,7 @@ public class IdeaMapper {
 						.id(iteration.getId())
 						.startDate(iteration.getStartDate())
 						.endDate(iteration.getEndDate())
+						.domain(iteration.getDomain())
 						.build()
 		).collect(Collectors.toList());
 	}
