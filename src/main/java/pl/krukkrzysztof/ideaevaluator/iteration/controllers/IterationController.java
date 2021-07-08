@@ -60,6 +60,15 @@ public class IterationController {
         return ResponseEntity.ok(toDto(savedIteration));
     }
 
+    @PutMapping("/{id}/updateVisits/{visits}")
+    @ResponseStatus(OK)
+    public void edit(
+            @PathVariable("id") Long id,
+            @PathVariable("visits") Integer visits
+    ) {
+        service.updateVisits(id, visits);
+    }
+
     @DeleteMapping("/{id}")
     @ResponseStatus(OK)
     public void delete(@PathVariable("id") Long id) {
