@@ -39,6 +39,7 @@ public class IdeaMapper {
                         .startDate(iteration.getStartDate())
                         .endDate(iteration.getEndDate())
 						.domain(iteration.getDomain())
+						.visitsTotal(iteration.getVisitsTotal())
                         .build()
         ).collect(Collectors.toList());
     }
@@ -50,6 +51,7 @@ public class IdeaMapper {
 						.startDate(iteration.getStartDate())
 						.endDate(iteration.getEndDate())
 						.domain(iteration.getDomain())
+						.visitsTotal(iteration.getVisitsTotal())
 						.build()
 		).collect(Collectors.toList());
 	}
