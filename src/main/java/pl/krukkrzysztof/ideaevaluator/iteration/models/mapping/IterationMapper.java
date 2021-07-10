@@ -11,6 +11,8 @@ import pl.krukkrzysztof.ideaevaluator.result.models.mapping.ResultMapper;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static pl.krukkrzysztof.ideaevaluator.commons.services.SuccessService.calculateSuccessRate;
+
 @Component
 public class IterationMapper {
 
@@ -39,6 +41,7 @@ public class IterationMapper {
                 .visitsTotal(iteration.getVisitsTotal())
                 .results(mapResultsToDtos(iteration))
                 .idea(iteration.getIdea().getId())
+                .successRate(calculateSuccessRate(iteration))
                 .build();
     }
 

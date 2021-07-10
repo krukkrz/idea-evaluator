@@ -9,6 +9,8 @@ import pl.krukkrzysztof.ideaevaluator.iteration.models.entities.Iteration;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static pl.krukkrzysztof.ideaevaluator.commons.services.SuccessService.calculateSuccessRate;
+
 @Component
 public class IdeaMapper {
 
@@ -39,6 +41,7 @@ public class IdeaMapper {
                         .startDate(iteration.getStartDate())
                         .endDate(iteration.getEndDate())
 						.domain(iteration.getDomain())
+						.successRate(calculateSuccessRate(iteration))
 						.visitsTotal(iteration.getVisitsTotal())
                         .build()
         ).collect(Collectors.toList());

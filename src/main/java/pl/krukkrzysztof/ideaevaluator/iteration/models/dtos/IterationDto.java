@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import pl.krukkrzysztof.ideaevaluator.result.models.dtos.ResultDto;
 import pl.krukkrzysztof.ideaevaluator.result.models.entities.Result;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -23,6 +24,7 @@ public class IterationDto {
     private LocalDate endDate;
     private String domain;
     private Integer visitsTotal;
+    private BigDecimal successRate;
     private List<ResultDto> results;
     private Long idea;
 }
